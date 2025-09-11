@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | Tourfinity</title>
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <section class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="subtitle">Here are some common questions our travelers ask.</p>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How do I book a trip on Tourfinity?</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Simply search for your destination, select flights, hotels, or packages, and complete your booking through our secure payment gateway.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Can I cancel or modify my booking?</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, cancellations and modifications are possible depending on airline or hotel policies. Check your booking details for more info.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is my payment information secure?</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely! We use encrypted payment systems and follow the latest security standards to protect your information.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do you offer student discounts?</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we offer special discounts for students at Chitkara University and other partnered institutes. Look out for promotions!</p>
+      </div>
+    </div>
+
+    <!-- Got more questions section -->
+    <div class="more-questions">
+      <h3>Got any other questions?</h3>
+      <p>If you can’t find your answer here, feel free to reach out to us directly.</p>
+      <a href="contact.html" class="contact-btn">Contact Us</a>
+    </div>
+  </section>
+
+  <script>
+    // FAQ Accordion toggle
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        answer.classList.toggle("active");
+        q.querySelector("i").classList.toggle("rotate");
+      });
+    });
+  </script>
+
+</body>
+</html>

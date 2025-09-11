@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations - Seasonal Guide</title>
+    <link rel="stylesheet" href="destination.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-black relative overflow-x-hidden">
+        <!-- Falling Emojis Container -->
+        <div id="falling-emojis" class="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>
+        
+        <!-- Header -->
+        <div class="relative z-20 bg-slate-900-90 backdrop-blur-sm border-b border-blue-800">
+            <div class="container mx-auto px-4 py-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-2">
+                    Discover Amazing Destinations
+                </h1>
+                <p class="text-blue-300 text-center text-lg">
+                    Find your perfect getaway based on the season
+                </p>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="relative z-20 container mx-auto px-4 py-8">
+            <div class="max-w-md mx-auto">
+                <label for="season-select" class="block text-white font-semibold mb-3 text-center">
+                    Choose Your Season
+                </label>
+                <select
+                    id="season-select"
+                    class="w-full p-4 bg-slate-800 border border-blue-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                >
+                    <option value="all">All Seasons</option>
+                    <option value="summer">Summer ☀️</option>
+                    <option value="winter">Winter ❄️</option>
+                    <option value="spring">Spring 🌸</option>
+                    <option value="monsoon">Monsoon 🌧️</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Destinations Grid -->
+        <div class="relative z-20 container mx-auto px-4 pb-12">
+            <div id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Destination cards will be populated by JavaScript -->
+            </div>
+            
+            <div id="no-results" class="text-center text-gray-400 mt-12 hidden">
+                <p class="text-xl">No destinations found for the selected season.</p>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="destination-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-slate-900 rounded-2xl max-w-2xl w-full max-h-90vh overflow-y-auto border border-blue-800">
+                <div class="relative">
+                    <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-t-2xl">
+                    <button id="close-modal" class="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all">
+                        ✕
+                    </button>
+                </div>
+                
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 id="modal-title" class="text-3xl font-bold text-white"></h2>
+                        <div class="flex items-center text-yellow-400">
+                            <span class="star-icon">⭐</span>
+                            <span id="modal-rating" class="text-white ml-1"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center text-blue-300 mb-4">
+                        <span class="location-icon">📍</span>
+                        <span id="modal-country" class="ml-2"></span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <div class="flex items-center text-blue-300 mb-2">
+                                <span class="calendar-icon">📅</span>
+                                <span class="font-semibold ml-2">Best Time to Visit</span>
+                            </div>
+                            <p id="modal-best-time" class="text-white"></p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <div class="flex items-center text-blue-300 mb-2">
+                                <span class="users-icon">👥</span>
+                                <span class="font-semibold ml-2">Annual Visitors</span>
+                            </div>
+                            <p id="modal-visitors" class="text-white"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center text-blue-300 mb-3">
+                            <span class="info-icon">ℹ️</span>
+                            <span class="font-semibold text-lg ml-2">About</span>
+                        </div>
+                        <p id="modal-description" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center text-blue-300 mb-3">
+                            <span class="camera-icon">📸</span>
+                            <span class="font-semibold text-lg ml-2">Famous For</span>
+                        </div>
+                        <p id="modal-famous-for" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="destination.js"></script>
+</body>
+</html>
